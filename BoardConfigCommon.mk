@@ -27,7 +27,7 @@ TARGET_ARCH_VARIANT := armv7-a-neon
 ENABLE_WEBGL := true
 
 # PowerHAL
-TARGET_PROVIDES_POWERHAL := true
+TARGET_USES_CM_POWERHAL := true
 
 # chargers
 BOARD_CHARGER_RES := device/samsung/qcom-common/charger
@@ -42,6 +42,7 @@ TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 BOARD_USES_QCOM_HARDWARE := true
 TARGET_QCOM_AUDIO_VARIANT := caf
 TARGET_QCOM_DISPLAY_VARIANT := caf
+BOARD_USES_LEGACY_ALSA_AUDIO := true
 
 # Graphics
 USE_OPENGL_RENDERER := true
@@ -62,3 +63,7 @@ BOARD_BATTERY_DEVICE_NAME := "battery"
 TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/qcom-common
 
 BOARD_HARDWARE_CLASS := hardware/samsung/cmhw
+
+# Override healthd HAL
+BOARD_HAL_STATIC_LIBRARIES := libhealthd.qcom
+
