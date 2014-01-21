@@ -22,24 +22,15 @@ PRODUCT_PACKAGES += \
     libgenlock \
     libmemalloc \
     liboverlay \
-    libqdutils \
-    libtilerenderer \
-    libI420colorconvert
+    libqdutils
 
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.hw=1 \
     debug.egl.hw=1 \
-    debug.composition.type=dyn \
     persist.hwc.mdpcomp.enable=true \
     debug.mdpcomp.logs=0 \
     ro.telephony.ril_class=SamsungQualcommRIL \
     ro.telephony.call_ring.multiple=0
-
-# GalaxyS3Settings
-# TODO: Move here
-#PRODUCT_PACKAGES += \
-#     GalaxyS3Settings \
-#     SamsungServiceMode
 
 # Omx
 PRODUCT_PACKAGES += \
@@ -69,10 +60,7 @@ PRODUCT_PACKAGES += \
     thermald-8930ab.conf \
     thermald-8960.conf \
     thermald-8960ab.conf \
-    thermal-engine-8064ab.conf \
-    thermal-engine-8064.conf \
-    thermal-engine-8930.conf \
-    thermal-engine-8960.conf
+    thermal-engine-8064ab.conf
 
 # Init scripts
 PRODUCT_PACKAGES += \
