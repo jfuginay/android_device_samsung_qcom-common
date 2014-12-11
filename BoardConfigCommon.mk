@@ -21,35 +21,27 @@ TARGET_NO_BOOTLOADER := true
 TARGET_ARCH := arm
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
+TARGET_CPU_SMP := true
 TARGET_ARCH_VARIANT := armv7-a-neon
+TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 
-# PowerHAL
-TARGET_PROVIDES_POWERHAL := true
-
-# chargers
+# Charger
 BOARD_CHARGER_RES := device/samsung/qcom-common/charger
 
-# Recovery
-TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
-
-# QCOM hardware
-TARGET_QCOM_AUDIO_VARIANT := caf
-TARGET_QCOM_DISPLAY_VARIANT := caf
-BOARD_USES_LEGACY_ALSA_AUDIO := true
+# CMHW
+BOARD_HARDWARE_CLASS += hardware/samsung/cmhw
 
 # Graphics
 USE_OPENGL_RENDERER := true
 TARGET_USES_C2D_COMPOSITION := true
 TARGET_USES_ION := true
 
-# Charging mode
-BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/power_supply/battery/batt_lp_charging
-BOARD_BATTERY_DEVICE_NAME := "battery"
-
-TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/qcom-common
-
-BOARD_HARDWARE_CLASS := hardware/samsung/cmhw
-
-# Override healthd HAL
+# Healthd
 BOARD_HAL_STATIC_LIBRARIES := libhealthd.qcom
 
+# Qualcomm support
+BOARD_USES_QCOM_HARDWARE := true
+
+# Recovery
+TARGET_RECOVERY_DEVICE_DIRS += device/samsung/qcom-common
+TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"

@@ -12,78 +12,30 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Overlay
+DEVICE_PACKAGE_OVERLAYS += \
+    device/samsung/qcom-common/overlay
 
-# Media config
-PRODUCT_COPY_FILES += \
-    device/samsung/qcom-common/media/media_codecs.xml:system/etc/media_codecs.xml
-
-# QCOM Display
-PRODUCT_PACKAGES += \
-    libgenlock \
-    libmemalloc \
-    liboverlay \
-    libqdutils
+# System properties
+PRODUCT_PROPERTY_OVERRIDES += \
+    com.qc.hardware=true
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    debug.sf.hw=1 \
     debug.egl.hw=1 \
-    persist.hwc.mdpcomp.enable=true \
+    debug.sf.hw=1 \
     debug.mdpcomp.logs=0 \
-    ro.telephony.ril_class=SamsungQualcommRIL \
+    persist.hwc.mdpcomp.enable=true
+
+PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.call_ring.multiple=0
 
-# Omx
+# Charger
 PRODUCT_PACKAGES += \
-    libdivxdrmdecrypt \
-    libmm-omxcore \
-    libOmxCore \
-    libstagefrighthw \
-    libOmxVdec \
-    libOmxVenc \
-    libOmxAacEnc \
-    libOmxAmrEnc \
-    libOmxEvrcEnc \
-    libOmxQcelp13Enc \
-    libdashplayer
+    charger \
+    charger_res_images
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
     make_ext4fs \
     e2fsck \
     setup_fs
-
-# Thermal profiles
-PRODUCT_PACKAGES += \
-    thermald-8064ab.conf \
-    thermald-8064.conf \
-    thermald-8930.conf \
-    thermald-8930ab.conf \
-    thermald-8960.conf \
-    thermald-8960ab.conf \
-    thermal-engine-8064ab.conf
-
-# Init scripts
-PRODUCT_PACKAGES += \
-    init.qcom.post_boot.sh \
-    init.qcom.efs.sync.sh \
-    init.qcom.sh \
-    init.qcom.class_core.sh \
-    init.qcom.class_main.sh \
-    init.qcom.syspart_fixup.sh \
-    init.qcom.early_boot.sh \
-    init.qcom.mdm_links.sh \
-    init.qcom.modem_links.sh \
-    init.qcom.usb.sh \
-    lpm.rc \
-    init.qcom.lpm_boot.sh \
-    init.qcom.thermal_conf.sh \
-    init.recovery.qcom.rc \
-    init.qcom.ril.sh
-
-# Charger
-PRODUCT_PACKAGES += charger charger_res_images
-
-PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
-
-# Common overlay
-DEVICE_PACKAGE_OVERLAYS += device/samsung/qcom-common/overlay
