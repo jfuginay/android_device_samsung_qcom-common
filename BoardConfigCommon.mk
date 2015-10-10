@@ -21,12 +21,8 @@ TARGET_NO_BOOTLOADER := true
 TARGET_ARCH := arm
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
-TARGET_CPU_SMP := true
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
-
-# Charger
-BOARD_CHARGER_RES := device/samsung/qcom-common/charger
 
 # CMHW
 BOARD_HARDWARE_CLASS += hardware/samsung/cmhw
@@ -45,3 +41,5 @@ BOARD_USES_QCOM_HARDWARE := true
 # Recovery
 TARGET_RECOVERY_DEVICE_DIRS += device/samsung/qcom-common
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
+BOARD_HAS_DOWNLOAD_MODE := true
+COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
