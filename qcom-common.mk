@@ -16,6 +16,10 @@
 DEVICE_PACKAGE_OVERLAYS += \
     device/samsung/qcom-common/overlay
 
+# Doze
+PRODUCT_PACKAGES += \
+    SamsungDoze \
+
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.hw=1 \
     debug.mdpcomp.logs=0 \
